@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            border: 0;
+            background-color: black;
+            color: blanchedalmond;
+        }
+        h1{
+            text-align: center;
+            color: rgb(153, 88, 2);
+        }
+        input{
+            width: 300px;
+            height: 25px;
+            margin-left: 35%;
+            margin-top: 10%;
+            border-radius: 2px;
+        }
+        #result{
+            text-align: center;
+            font-size: 50px;
+        }
+        #bu{
+            width: 80px;
+            height: 25px;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        Welcome to the Number Game
+    </h1>
+    <input id="number">
+    <button onclick="gu()" id="bu">GUESS</button>
+    <p id="result">You Are Right/Wrong</p>
+    <p id="score">
+        Your Score=10
+    </p>
+    <script>
+        var guessing=document.getElementById("number")
+        var result=document.getElementById("result")
+        var randomnum= Math.floor(Math.random()*10)+1
+        var totalscore=document.getElementById("score")
+        var score=10
+        function gu(){
+            console.log(randomnum)
+            var enterednum= guessing.value
+            if(randomnum==enterednum){
+                result.textContent="You Are Right"
+                alert("You Are Right!! THANK YOU FOR PLAYING")
+            }
+            else{
+                score=score-1
+                totalscore.textContent="total score = "+score
+                result.textContent="wrong"
+                alert("You Are Worng!! LETS TRY AGAIN")
+            }
+        }
+    </script>
+</body>
+</html>
